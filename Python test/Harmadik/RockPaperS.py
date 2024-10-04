@@ -4,7 +4,7 @@ RPS = ["Rock", "Paper", "Scissors"]
 valasz = input("Choose Rock, Paper or Scissors: ").capitalize().strip()
 x = random.choice(RPS)
 
-if (valasz != "Rock" or "Paper" or "Scissors"):
+if (valasz not in RPS):
     print("Give a chooseable answer.")
 elif (valasz == "Rock" and x == "Rock"):
     print("Tie!")
