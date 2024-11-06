@@ -8,16 +8,16 @@ UserInput = None
 tries = 0 
 
 while UserInput != "H":
+    tries = tries + 1
+    if low + 1 == high - 1:
+            UserInput = "H"
     guess = random.randint(low, high)
-    UserInput = input(f"A számítógép {guess}-re gondolt. Ez a szám kisseb (K), nagyobb (N) vagy helyes(H): ").strip().upper()
+    UserInput = input(f"A számítógép {guess}-re gondolt. Ez a szám kisseb (K), nagyobb (N) vagy helyes (H): ").strip().upper()
     while UserInput not in "KNH":
          print("Adj meg egy helyes értéket.")
-         UserInput = input(f"A számítógép {guess}-re gondolt. Ez a szám kisseb (K), nagyobb (N) vagy helyes(H): ").strip().upper()
-    tries = tries + 1
+         UserInput = input(f"A számítógép {guess}-re gondolt. Ez a szám kisseb (K), nagyobb (N) vagy helyes (H): ").strip().upper()
     if UserInput == "N":
         low = guess + 1
     elif UserInput == "K":
         high = guess - 1
-    elif low == high:
-            UserInput == "H"
 print(f"A számítógép kitalálta a(z) {guess} számot {tries} próbából.")
